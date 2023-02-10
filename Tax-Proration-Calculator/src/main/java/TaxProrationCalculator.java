@@ -6,20 +6,22 @@ public class TaxProrationCalculator {
         LocalDate endTaxPeriod;
         int daysInYear;
 
-        // Constructor Method
-        public TaxProrationCalculator() {
-
-        }
-
-        //Main Method
-        public static void main(String[] args) {
-
-        }
-
         // Getters
 
 
-        public int getDaysInYear() {
+    public LocalDate getDateOfClosing() {
+        return dateOfClosing;
+    }
+
+    public LocalDate getBeginTaxPeriod() {
+        return beginTaxPeriod;
+    }
+
+    public LocalDate getEndTaxPeriod() {
+        return endTaxPeriod;
+    }
+
+    public int getDaysInYear() {
             return daysInYear;
         }
 
