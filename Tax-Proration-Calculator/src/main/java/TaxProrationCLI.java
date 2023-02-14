@@ -13,20 +13,30 @@ public class TaxProrationCLI {
     public void run() {
         // Perhaps these prompts can be broken out into individual classes, maybe with an abstract superclass?
         System.out.println("Welcome to the Tax Proration Calculator!");
-        System.out.println("Please note that this program assumes county and municipal tax periods correspond with the calendar year \n(January 1 through December 31), and the school tax period running from July 1 through June 30.");
+        System.out.println("Please note that this program assumes county and municipal tax periods correspond with the calendar year" +
+                " \n(January 1 through December 31), and the school tax period running from July 1 through June 30.");
         System.out.println();
         // Prompt user for date of closing
         System.out.print("Please enter the date of closing in MM/DD/YYYY format: ");
         LocalDate closingDate = LocalDate.parse(userInput.nextLine());
+
+        // TODO make each of the school tax conversations into separate methods which pull discount/penalty calculations
+        // TODO for school/county/municipal from abstract classes
+        
         // Prompt user for school tax amount
-        System.out.println("Please enter the current year school taxes:");
+        System.out.println("Please enter the current year (base amount) school taxes:");
         System.out.print("$");
         String currentSchool = userInput.nextLine();
         // Have school taxes been paid?
         System.out.println("Have school taxes been paid? Y/N");
         String schoolTaxStatus = userInput.nextLine();
         // TODO prompt user for whether amount paid was discount, base, or penalty, and what that amount was
-        
+        if (schoolTaxStatus.equalsIgnoreCase("Y")) {
+            System.out.println("Was this the discount, base, or penalty payment amount?");
+        } else {
+            System.out.println("My calculations indicate that the discount amount is " + discount(currentSchool) + ", and the penalty amount is \n"
+                    + penalty(currentSchool) + ". Is this correct? (Y/N)");
+        }
         // Prompt user for county tax amount
         System.out.println("Please enter the current year (base amount) county taxes:");
         System.out.print("$");

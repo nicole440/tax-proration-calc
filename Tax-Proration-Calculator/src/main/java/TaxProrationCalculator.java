@@ -1,14 +1,12 @@
 import java.time.LocalDate;
 public class TaxProrationCalculator {
-
-        LocalDate dateOfClosing;
-        LocalDate beginTaxPeriod;
-        LocalDate endTaxPeriod;
-        int daysInYear;
-
-        // Getters
+    LocalDate dateOfClosing;
+    LocalDate beginTaxPeriod;
+    LocalDate endTaxPeriod;
+    int daysInYear;
 
 
+    // Getters
     public LocalDate getDateOfClosing() {
         return dateOfClosing;
     }
@@ -25,19 +23,16 @@ public class TaxProrationCalculator {
             return daysInYear;
         }
 
-        //Setters
-        public LocalDate setBeginTaxPeriod(LocalDate taxPeriodBegin) {
-
-            return beginTaxPeriod;
-        }
-
-        public LocalDate setEndTaxPeriod(LocalDate taxPeriodEnd) {
-
-            return endTaxPeriod;
-        }
-
-        public LocalDate setDateOfClosing(LocalDate closingDate) {
-
-            return dateOfClosing;
-        }
+    //Setters
+    public LocalDate setBeginTaxPeriod(LocalDate taxPeriodBegin) {
+        return beginTaxPeriod;
     }
+
+    public LocalDate setEndTaxPeriod(LocalDate taxPeriodEnd) {
+        return endTaxPeriod;
+    }
+
+    public LocalDate setDateOfClosing(LocalDate closingDate) {
+        return dateOfClosing;
+    }
+}
