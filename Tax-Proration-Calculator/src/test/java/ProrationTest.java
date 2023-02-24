@@ -17,11 +17,9 @@ public class ProrationTest {
         // Act
         // Count from taxPeriodBegin to taxPeriodEnd to determine days in tax period: 365
         Duration daysInYearDuration = Duration.between(taxPeriodBegin, taxPeriodEnd);
-        Integer daysInYear = Integer.parseInt(String.valueOf((daysInYearDuration)));
-        taxAmount.divide(BigDecimal.valueOf(Long.parseLong((String.valueOf(daysInYear)))));
-
+        String daysInYear = String.valueOf((daysInYearDuration));
         // Determine perDiem tax amount by dividing number of days in tax period: 2.74 perDiem
-        
+        BigDecimal perDiem = new BigDecimal(String.valueOf(taxAmount.divide(BigDecimal.valueOf(Long.parseLong((daysInYear))))));
         // sellerPaid = (n days from taxPeriodBegin to dateOfClosing) * perDiem
         // buyerPays = (n days from dateOfClosing to taxPeriodEnd), * perDiem
 
